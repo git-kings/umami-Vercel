@@ -14,7 +14,7 @@ const pkg = require('./package.json');
 const contentSecurityPolicy = [
   `default-src *`,
   `img-src *`,
-  `script-src *`,
+  `script-src 'unsafe-inline'`,
   `style-src *`,
   `connect-src *`,
   `frame-ancestors *`,
