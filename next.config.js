@@ -3,15 +3,22 @@ require('dotenv').config();
 const path = require('path');
 const pkg = require('./package.json');
 
+// const contentSecurityPolicy = [
+//   `default-src 'self'`,
+//   `img-src *`,
+//   `script-src 'self' 'unsafe-eval' 'unsafe-inline'`,
+//   `style-src 'self' 'unsafe-inline'`,
+//   `connect-src 'self' api.umami.is`,
+//   `frame-ancestors 'self' ${process.env.ALLOWED_FRAME_URLS || ''}`,
+// ];
 const contentSecurityPolicy = [
-  `default-src 'self'`,
+  `default-src '*'`,
   `img-src *`,
-  `script-src 'self' 'unsafe-eval' 'unsafe-inline'`,
-  `style-src 'self' 'unsafe-inline'`,
-  `connect-src 'self' api.umami.is`,
-  `frame-ancestors 'self' ${process.env.ALLOWED_FRAME_URLS || ''}`,
+  `script-src '*'`,
+  `style-src '*'`,
+  `connect-src '*' api.umami.is`,
+  `frame-ancestors '*' ${process.env.ALLOWED_FRAME_URLS || ''}`,
 ];
-
 const headers = [
   {
     key: 'X-DNS-Prefetch-Control',
