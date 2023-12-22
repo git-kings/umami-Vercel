@@ -12,12 +12,12 @@ const pkg = require('./package.json');
 //   `frame-ancestors 'self' ${process.env.ALLOWED_FRAME_URLS || ''}`,
 // ];
 const contentSecurityPolicy = [
-  `default-src '*'`,
+  `default-src *`,
   `img-src *`,
-  `script-src '*'`,
-  `style-src '*'`,
-  `connect-src '*' api.umami.is`,
-  `frame-ancestors '*' ${process.env.ALLOWED_FRAME_URLS || ''}`,
+  `script-src *`,
+  `style-src *`,
+  `connect-src *`,
+  `frame-ancestors *`,
 ];
 const headers = [
   {
